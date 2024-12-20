@@ -1,9 +1,9 @@
 import './circle-button.css';
-import { Children } from 'react';
+import { children } from 'react';
 
-export function CircleButton ({ children, className, title, onClick }) {
+export function CircleButton ({ children, className, title, onClick, current }) {
     return (
-        <button className={className ? `circle-button ${className}` : 'circle-button'} title={title} onClick={onClick}>
+        <button className={current ? `circle-button ${className} active` : `circle-button ${className}`} title={title} onClick={onClick} >
             {children}
         </button>
     )

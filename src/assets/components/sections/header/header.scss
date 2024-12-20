@@ -1,5 +1,5 @@
 .header {
-    color: #fff;
+    color: var(--white);
     overflow: hidden;
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -7,7 +7,7 @@
     &-bar {
         display: flex;
         height: 64px;
-        padding: 10px 0;
+        padding: 1rem 0;
 
         &__actions {
             margin-left: auto;
@@ -31,13 +31,15 @@
         &__menu {
             &-row {
                 height: 2px;
-                background-color: #fff;
+                background-color: currentColor;
+                transition: 300ms transform ease-in-out, 300ms width ease-in-out;
 
                 &:not(:last-child) {
                     margin-bottom: 1rem;
                 }
 
-                &:first-child, &:last-child {
+                &:first-child,
+                &:last-child {
                     width: 50%;
                 }
 
@@ -53,6 +55,7 @@
                         height: 100%;
                         background-color: inherit;
                         transform: rotate(0);
+                        transition: 300ms transform ease-in-out;
                     }
                 }
 
@@ -62,12 +65,4 @@
             }
         }
     }
-
-    &__action-btn {
-        &:hover {
-            outline: 1px solid greenyellow;
-        }
-    }
-
-
 }
