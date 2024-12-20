@@ -1,0 +1,56 @@
+@keyframes rotateHeaderLogo {
+    0%, 45% {
+    transform: rotateX(0);
+    } 50%, 95% {
+    transform: rotateX(180deg);
+    } 100% {
+    transform: rotateX(360deg);
+    }
+}
+
+.header-logo {
+    width: 140px;
+    height: 100%;
+
+    &__wrapper {
+        width: inherit;
+        height: inherit;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(-180deg);
+        animation: rotateHeaderLogo ease-in-out infinite 15s;
+    }
+
+    &__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        backface-visibility: hidden;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 4.4rem;
+        font-size: 2rem;
+    }
+
+    &__title {
+        letter-spacing: .3rem;
+    }
+
+    &__address {
+        transform: rotateX(180deg);
+
+        &-text {
+            display: block;
+            height: 50%;
+            font-size: 1.5rem;
+            letter-spacing: .1rem;
+            line-height: 2.2rem;
+        }
+    }
+
+
+}

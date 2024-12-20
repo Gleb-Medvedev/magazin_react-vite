@@ -1,0 +1,73 @@
+.header {
+    color: #fff;
+    overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    &-bar {
+        display: flex;
+        height: 64px;
+        padding: 10px 0;
+
+        &__actions {
+            margin-left: auto;
+            height: 100%;
+        
+            & > * {
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+
+    & .top-bar {        
+        &__logo-container {
+            margin-right: 2rem;
+        }
+    }
+
+    & .bottom-bar {
+        &__menu {
+            &-row {
+                height: 2px;
+                background-color: #fff;
+
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+
+                &:first-child, &:last-child {
+                    width: 50%;
+                }
+
+                &:nth-child(2) {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        background-color: inherit;
+                        transform: rotate(0);
+                    }
+                }
+
+                &:last-child {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    &__action-btn {
+        &:hover {
+            outline: 1px solid greenyellow;
+        }
+    }
+
+
+}
