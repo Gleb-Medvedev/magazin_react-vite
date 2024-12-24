@@ -21,6 +21,53 @@
         }
     }
 
+    &__action-btn {
+        color: var(--white);
+        width: 44px;
+        height: 44px;
+        padding: .8rem;
+        overflow: hidden;
+
+        &:hover {
+            color: var(--orange);
+        }
+
+        &.active,
+        &.in-view {
+            color: var(--light-green);
+    
+            & .bottom-bar__menu {
+                &-row {
+                    &:first-child,
+                    &:last-child {
+                        width: 0;
+                    }
+    
+                    &:nth-child(2) {
+                        transform: rotate(-45deg);
+    
+                        &::after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover,
+        &.active,
+        &.in-view {
+            outline: 2px solid;
+            outline-color: currentColor;
+    
+            & .bottom-bar__menu {
+                &-row {
+                    background-color: currentColor;
+                }
+            }
+        }
+    }
+
     & .top-bar {        
         &__logo-container {
             margin-right: 2rem;
@@ -28,6 +75,45 @@
     }
 
     & .bottom-bar {
+        & .contacts {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            outline: 2px solid currentColor;
+
+            &-btn {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            &-container {
+                pointer-events: none;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                &_movable {
+                    transition: 300ms ease-out transform;
+                    height: 200%;
+                }
+            }
+
+            &__icon {
+                height: 50%;
+                aspect-ratio: 1 / 1;
+            }
+
+            &.in-view {
+                .contacts-container_movable {
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
         &__menu {
             &-row {
                 height: 2px;

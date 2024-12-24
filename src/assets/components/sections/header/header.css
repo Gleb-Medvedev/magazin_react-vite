@@ -18,8 +18,75 @@
 .header-bar__actions > *:not(:last-child) {
   margin-right: 2rem;
 }
+.header__action-btn {
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  padding: 0.8rem;
+  overflow: hidden;
+}
+.header__action-btn:hover {
+  color: var(--orange);
+}
+.header__action-btn.active, .header__action-btn.in-view {
+  color: var(--light-green);
+}
+.header__action-btn.active .bottom-bar__menu-row:first-child, .header__action-btn.active .bottom-bar__menu-row:last-child, .header__action-btn.in-view .bottom-bar__menu-row:first-child, .header__action-btn.in-view .bottom-bar__menu-row:last-child {
+  width: 0;
+}
+.header__action-btn.active .bottom-bar__menu-row:nth-child(2), .header__action-btn.in-view .bottom-bar__menu-row:nth-child(2) {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.header__action-btn.active .bottom-bar__menu-row:nth-child(2)::after, .header__action-btn.in-view .bottom-bar__menu-row:nth-child(2)::after {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.header__action-btn:hover, .header__action-btn.active, .header__action-btn.in-view {
+  outline: 2px solid;
+  outline-color: currentColor;
+}
+.header__action-btn:hover .bottom-bar__menu-row, .header__action-btn.active .bottom-bar__menu-row, .header__action-btn.in-view .bottom-bar__menu-row {
+  background-color: currentColor;
+}
 .header .top-bar__logo-container {
   margin-right: 2rem;
+}
+.header .bottom-bar .contacts {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  outline: 2px solid currentColor;
+}
+.header .bottom-bar .contacts-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.header .bottom-bar .contacts-container {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.header .bottom-bar .contacts-container_movable {
+  -webkit-transition: 300ms ease-out transform;
+  transition: 300ms ease-out transform;
+  height: 200%;
+}
+.header .bottom-bar .contacts__icon {
+  height: 50%;
+  aspect-ratio: 1/1;
+}
+.header .bottom-bar .contacts.in-view .contacts-container_movable {
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .header .bottom-bar__menu-row {
   height: 2px;
